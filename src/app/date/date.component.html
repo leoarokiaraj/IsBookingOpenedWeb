@@ -1,0 +1,17 @@
+<span class="label label-default">Select Date</span>
+<div class="dateTimeComponent">
+   
+
+<bs-datepicker-inline 
+      class="datePickerStyle"
+      [minDate]='selectedDate'
+      [bsValue]="selectedDate"
+      (bsValueChange)="onDateChange($event)"
+      [bsConfig]="{dateInputFormat: 'DD/MM/YYYY' }"
+      ></bs-datepicker-inline>
+      
+<br/>
+    <timepicker class="timePickerStyle"  [(ngModel)] ="time" (ngModelChange)="onTimeChange($event)"></timepicker>
+  </div>
+  
+  

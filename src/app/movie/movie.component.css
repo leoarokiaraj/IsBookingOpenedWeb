@@ -1,0 +1,62 @@
+#MovieSearchText
+{
+    width: 75%;
+}
+#SearchMovieButton
+{
+    margin-left:1% ;
+    margin-bottom:5px ;
+    width: 24%;
+}
+
+.invalid{
+    text-align: center;
+    width:800px; 
+    margin:0 auto;
+    color: red;
+}
+.valid{
+display: none;
+}
+
+.invalidList{
+    border:2px solid red !important;
+}
+
+#MovieList, #MovieTypeList
+{
+    overflow-y: hidden;
+    overflow-x: auto;
+    border:1px solid black;
+}
+#MovieList{
+    height: 335px;
+}
+#MovieTypeList
+{
+    height: 80px;
+}
+.movieTable {
+    display:table;
+    border-collapse:separate;
+    border-spacing:10px;
+}
+.movieRow {
+    display:table-row;
+}
+.movieCell, .movieTypeCell {
+    display:table-cell;
+    padding:5px;
+    border:1px solid black;
+    text-align: center;
+}
+.movieCell
+{
+    height: 200px;
+    box-shadow: 8px 7px 20px 0px;
+}
+
+.movieTypeCell{
+    height: 20px;
+    box-shadow: 4px 4px 20px -8px;
+}

@@ -1,0 +1,26 @@
+<div id="TheaterSearchBar">
+    <span class="label label-default">Select Theater</span>
+    <br />
+    <input class="form-control-file" id="TheaterSearchText" (keyup.escape)="clearSearch()" (keyup.enter)="theaterSearch()">
+    <button id="SearchTheaterButton" class="btn btn-primary" (click)="theaterSearch()">Search</button>
+</div>
+
+<div [ngClass]="!theaterValid.is_valid_theater ? 'invalid' : 'valid'">Select valid theater</div>
+
+<div id="TheaterList" [ngClass]="!theaterValid.is_valid_theater ? 'invalidList' : ''">
+    <div class="theaterTable">
+        <div class="theaterRow">            
+        <span class="lable" *ngIf="theaterLoading">Loading...</span>
+            <span class="lable" *ngIf="noTheater">No result found</span>
+            <div class="theaterCell btn btn-outline-primary" 
+                 *ngFor="let theater of searchRes; let i = index"
+                 (click)="theaterSelected(theater.id,theater.title, i)" 
+                 [class.active]="i == highlightTheater">
+                <img src={{theater.imageURL}}
+                    alt={{theater.title}} height="200" width="130"/>
+                <div [attr.id]=theater.id class="label">{{theater.title}}</div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div id="MovieSearchBar">
+    <span class="label label-default">Select Movie</span>
+    <br />
+    <input class="form-control-file" id="MovieSearchText" (keyup.escape)="clearSearch()" (keyup.enter)="movieSearch()">
+    <button id="SearchMovieButton" class="btn btn-primary" (click)="movieSearch()">Search</button>
+</div>
+
+<div [ngClass]="!movieValid.is_valid_movie ? 'invalid' : 'valid'">Select valid movie</div>
+
+<div id="MovieList" [ngClass]="!movieValid.is_valid_movie ? 'invalidList' : ''">
+    <div class="movieTable">
+        <div class="movieRow">
+            <span class="lable" *ngIf="noMovies">No result found</span>
+            <div class="movieCell btn btn-outline-primary" 
+                 *ngFor="let movie of movieArr; let i = index"
+                 (click)="movieSelected(movie.event_code,movie.title, i)" 
+                 [class.active]="i == highlightMovie">
+                <img src={{movie.imageURL}}
+                    alt={{movie.title}} height="200" width="130"/>
+                <div [attr.event_code]=movie.event_code class="label">{{movie.title}}</div>
+            </div>
+          
+        </div>
+    </div>
+</div>
+<br />
+<span class="label label-default">Select Movie Resolution</span>
+<br />
+<div [ngClass]="!movieValid.is_valid_movie_type ? 'invalid' : 'valid'">Select valid movie type</div>
+
+<div id="MovieTypeList" [ngClass]="!movieValid.is_valid_movie_type ? 'invalidList' : ''">
+    <div class="movieTable">
+        <span class="lable" *ngIf="movieTypeLoading">Loading...</span>
+        <span class="lable" *ngIf="noMovieType">No movie type present using default movie type</span>
+        <div class="movieRow">
+            <div class="movieTypeCell btn btn-outline-primary" *ngFor="let movie of movieTypes; let i = index"
+            [class.active]="i == highlightMovieType" (click)="selectMovieType(movie.eventCode, i)">
+                <span [attr.eventCode]=movie.eventCode>{{movie.lang}} {{movie.dimension}}</span>
+            </div>
+        </div>
+    </div>
+</div>

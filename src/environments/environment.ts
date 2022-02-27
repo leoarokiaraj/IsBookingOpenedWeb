@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  IsBookingOpenedServiceURL:"https://is-booking-opened-service.herokuapp.com/",
+  IsBookingOpenedAPIURL:"https://booking-opened-api.herokuapp.com/",
+  Location:"chennai",
+  LocationID:"chen"
 };
 
 /*

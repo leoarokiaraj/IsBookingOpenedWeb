@@ -1,0 +1,58 @@
+<button id="TriggerButton" class="btn btn-primary" (click)="CreateTrigger()">Create Trigger</button>
+
+<br/>
+
+<div class="triggerView">
+    <table>
+        <tr>
+            <th>Trigger Index</th>
+            <th>Movie Name</th>
+            <th>Theater Name</th>
+            <th>Theater ID</th>
+            <th>Trigger URL</th>
+            <th>Trigger Status</th>
+            <th>Trigger Date</th>
+            <th>Trigger Time</th>
+            <th>Created On</th>
+            <th>Updated On</th>
+        </tr>
+        <tr *ngIf="noTrigger"><td colspan="10">No result found</td></tr>
+        <tr *ngFor="let trigger of triggerData; let i = index">
+            <td><div>{{i+1}}</div></td>
+            <td><input [(ngModel)]="trigger.movie_name" ></td>
+            <td><input [(ngModel)]="trigger.theater_name"></td>
+            <td><input [(ngModel)]="trigger.theater_id"></td>
+            <td><input style="width: 450px;display: inline-block;"[(ngModel)]="trigger.trigger_url"></td>
+            <td>
+                <select [(ngModel)]="trigger.trigger_status" class="form-control" >
+                    <option [ngValue]="0">Pending</option>
+                    <option [ngValue]="1">Success</option>
+                </select>
+            <td><input [(ngModel)]="trigger.trigger_date"></td>
+            <td><input [(ngModel)]="trigger.trigger_time"></td>
+            <td>{{trigger.created_on}}</td>
+            <td>{{trigger.updated_on}}</td>
+            <td>
+
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-0" type="button" 
+                            data-toggle="tooltip" data-placement="top" title="Update"
+                            (click)="updateButtonClick(trigger)">
+                                <i class="fa fa-refresh"></i>
+                        </button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-danger btn-sm rounded-0" type="button" 
+                                data-toggle="tooltip" data-placement="top" title="Delete"
+                                (click)="deleteButtonClick(trigger)">
+                                    <i class="fa fa-trash"></i>
+                        </button>
+                    </li>
+                </ul>
+
+            </td>
+        </tr>
+        
+    </table>
+</div>

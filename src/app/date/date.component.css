@@ -1,0 +1,18 @@
+.dateTimeComponent{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+.timePickerStyle{
+    display: inline-block;
+    position: relative;
+    left: 20%;
+}
+.datePickerStyle{
+
+        
+}
+.ui-datepicker{
+    top:-40;
+}

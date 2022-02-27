@@ -1,0 +1,52 @@
+#TheaterSearchText
+{
+    width: 75%;
+}
+#SearchTheaterButton
+{
+    margin-left:1% ;
+    margin-bottom:5px ;
+    width: 24%;
+}
+
+.invalid{
+    text-align: center;
+    width:800px; 
+    margin:0 auto;
+    color: red;
+}
+.valid{
+display: none;
+}
+
+.invalidList{
+    border:2px solid red !important;
+}
+
+#TheaterList
+{
+    overflow-y: hidden;
+    overflow-x: auto;
+    border:1px solid black;
+    height: 335px;
+}
+
+.theaterTable {
+    display:table;
+    border-collapse:separate;
+    border-spacing:10px;
+}
+
+.theaterRow{
+    display:table-row;
+}
+
+.theaterCell{
+    display:table-cell;
+    padding:5px;
+    border:1px solid black;
+    text-align: center;
+    height: 200px;
+    box-shadow: 8px 7px 20px 0px;
+    width: 130px;
+}
