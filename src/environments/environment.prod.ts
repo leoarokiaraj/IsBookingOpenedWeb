@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   IsBookingOpenedServiceURL:"https://is-booking-opened-service.herokuapp.com/",
-  IsBookingOpenedAPIURL:"http://localhost:5009/",
+  IsBookingOpenedAPIURL:"https://booking-opened-api.herokuapp.com/",
   Location:"chennai",
   LocationID:"chen"
 };

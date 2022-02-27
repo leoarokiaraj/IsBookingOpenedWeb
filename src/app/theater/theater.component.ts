@@ -15,7 +15,30 @@ export class TheaterComponent implements OnInit {
   theaterValid:Validate = new Validate();
   noTheater:boolean = false
   theaterLoading:boolean=false
-  defaultTheaters:SerchClass[] = [ ];
+  defaultTheaters:SerchClass[] = [
+    {
+			"title": "PVR: Ampa Mall, Nelson Manickam Road",
+			"id": "PVCH",
+			"imageURL":"../../assets/pvr_sky_walk.PNG"
+		},
+    {
+			"title": "PVR: VR Chennai, Anna Nagar",
+			"id": "VRCM",
+			"imageURL":"../../assets/pvr_vr_chennai.png"
+		},
+    {
+			"title": "PVR: Grand Mall, Velachery",
+			"id": "PVVL",
+      "imageURL":"../../assets/pvr_velachery.jpg"
+		},
+    {
+      "title": "SPI: Palazzo-The Forum Vijaya Mall, Vadapalani",
+      "id": "SPPZ",
+      "imageURL":"../../assets/palazzo.PNG"
+    }
+		
+
+  ];
 
 
 

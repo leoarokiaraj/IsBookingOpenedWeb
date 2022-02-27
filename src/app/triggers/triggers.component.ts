@@ -39,6 +39,7 @@ export class TriggersComponent implements OnInit {
         console.log(data)
       },
       error: error => {
+        this.noTrigger = true;
         console.error('There was an error!', error);
       }
     })
